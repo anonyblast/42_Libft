@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gusluiz- <gusluiz-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/31 03:36:15 by gusluiz-          #+#    #+#             */
-/*   Updated: 2022/06/01 00:24:36 by gusluiz-         ###   ########.fr       */
+/*   Created: 2022/05/31 23:48:33 by gusluiz-          #+#    #+#             */
+/*   Updated: 2022/06/01 00:23:16 by gusluiz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-// Includes
-# include <stdio.h>
-# include <stdlib.h>
+void	*ft_memset(void	*s, int c, size_t n)
+{
+	unsigned char	*p;
+	size_t			i;
 
-// String Functions (Return 1 if TRUE or 0 if FALSE)
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-int		ft_isalnum(int c);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
-
-// String Funtions
-size_t	ft_strlen(const char *str);
-void	*ft_memset(void	*s, int c, size_t n);
-
-#endif
+	p = (unsigned char *)s;
+	i = 0;
+	if (!s)
+		return (0);
+	while (i < n)
+		p[i ++] = (unsigned char)c;
+	return (s);
+}

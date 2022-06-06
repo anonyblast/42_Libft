@@ -6,7 +6,7 @@
 /*   By: gusluiz- <gusluiz-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 03:36:15 by gusluiz-          #+#    #+#             */
-/*   Updated: 2022/06/06 02:06:31 by gusluiz-         ###   ########.fr       */
+/*   Updated: 2022/06/06 02:13:18 by gusluiz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size);
 
 // String Conversions
 int		ft_toupper(int c);
+int		ft_tolower(int c);
 
 #endif

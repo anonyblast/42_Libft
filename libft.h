@@ -6,7 +6,7 @@
 /*   By: gusluiz- <gusluiz-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 03:36:15 by gusluiz-          #+#    #+#             */
-/*   Updated: 2022/06/07 16:02:03 by gusluiz-         ###   ########.fr       */
+/*   Updated: 2022/06/07 16:07:50 by gusluiz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,8 @@ int		ft_tolower(int c);
 // Locate char in str
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
+
+// ASCII to integer
+int	ft_atoi(const char *nptr);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: gusluiz- <gusluiz-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 03:36:15 by gusluiz-          #+#    #+#             */
-/*   Updated: 2022/06/06 02:53:14 by gusluiz-         ###   ########.fr       */
+/*   Updated: 2022/06/07 15:02:13 by gusluiz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,8 @@ int		ft_tolower(int c);
 // Locate char in str
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
+
+// Compare two strings
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 #endif

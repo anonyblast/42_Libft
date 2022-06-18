@@ -6,7 +6,7 @@
 /*   By: gusluiz- <gusluiz-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 03:36:15 by gusluiz-          #+#    #+#             */
-/*   Updated: 2022/06/18 16:32:45 by gusluiz-         ###   ########.fr       */
+/*   Updated: 2022/06/18 16:39:32 by gusluiz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,6 @@ char	*ft_strdup(const char *src);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s);
+char	**ft_split(char const *str, char c);
 
 #endif

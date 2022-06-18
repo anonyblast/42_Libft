@@ -6,7 +6,7 @@
 /*   By: gusluiz- <gusluiz-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 03:36:15 by gusluiz-          #+#    #+#             */
-/*   Updated: 2022/06/18 16:18:36 by gusluiz-         ###   ########.fr       */
+/*   Updated: 2022/06/18 16:25:23 by gusluiz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,8 @@ void	*ft_calloc(size_t nmemb, size_t size);
 
 // Duplicate a string
 char	*ft_strdup(const char *src);
+
+// Additional Functions
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif

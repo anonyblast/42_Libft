@@ -6,7 +6,7 @@
 /*   By: gusluiz- <gusluiz-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 03:36:15 by gusluiz-          #+#    #+#             */
-/*   Updated: 2022/06/18 15:53:54 by gusluiz-         ###   ########.fr       */
+/*   Updated: 2022/06/18 16:18:36 by gusluiz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,8 @@ int		ft_atoi(const char *nptr);
 
 // Allocate dynamic memory
 void	*ft_calloc(size_t nmemb, size_t size);
+
+// Duplicate a string
+char	*ft_strdup(const char *src);
 
 #endif

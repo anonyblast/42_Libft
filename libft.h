@@ -6,7 +6,7 @@
 /*   By: gusluiz- <gusluiz-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 03:36:15 by gusluiz-          #+#    #+#             */
-/*   Updated: 2022/06/18 16:45:33 by gusluiz-         ###   ########.fr       */
+/*   Updated: 2022/06/22 19:23:39 by gusluiz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,6 @@ char	*ft_strtrim(char const *s);
 char	**ft_split(char const *str, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 
 #endif

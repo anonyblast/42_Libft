@@ -6,60 +6,58 @@
 /*   By: gusluiz- <gusluiz-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 16:41:33 by gusluiz-          #+#    #+#             */
-/*   Updated: 2022/06/18 16:41:55 by gusluiz-         ###   ########.fr       */
+/*   Updated: 2022/06/24 00:43:56 by gusluiz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*ft_array(char *x, unsigned int number, long int len)
+static size_t	ft_count_numbers(int n)
 {
-	while (number > 0)
+	size_t			i;
+
+	i = 1;
+	if (n == -2147483648)
+		return (11);
+	if (n < 0)
 	{
-		x[len--] = 48 + (number % 10);
-		number = number / 10;
+		n *= -1;
+		i++;
 	}
-	return (x);
-}
-
-static long int	ft_len(int n)
-{
-	int					len;
-
-	len = 0;
-	if (n <= 0)
-		len = 1;
-	while (n != 0)
+	if (n >= 0 && n <= 9)
+		return (i);
+	while (n / 10 > 0 || n % 10 == 0)
 	{
-		len++;
 		n = n / 10;
+		i++;
 	}
-	return (len);
+	return (i);
 }
 
 char	*ft_itoa(int n)
 {
-	char				*x;
-	long int			len;
-	unsigned int		number;
-	int					sign;
+	char			*res;
+	long int		n_value;
+	unsigned int	char_n;
+	size_t			size;
 
-	sign = 1;
-	len = ft_len(n);
-	x = (char *)malloc(sizeof(char) * (len + 1));
-	if (!(x))
-		return (NULL);
-	x[len--] = '\0';
-	if (n == 0)
-		x[0] = '0';
-	if (n < 0)
+	size = ft_count_numbers(n);
+	res = malloc(size + 1);
+	if (!res)
+		return (0);
+	res[size] = '\0';
+	n_value = n;
+	if (n_value < 0)
+		n_value *= -1;
+	while (size)
 	{
-		sign *= -1;
-		number = n * -1;
-		x[0] = '-';
+		char_n = n_value;
+		while (char_n > 9)
+			char_n = char_n % 10;
+		res[--size] = char_n + 48;
+		n_value = n_value / 10;
 	}
-	else
-		number = n;
-	x = ft_array(x, number, len);
-	return (x);
+	if (n < 0)
+		res[0] = '-';
+	return (res);
 }

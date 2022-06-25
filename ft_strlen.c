@@ -6,7 +6,7 @@
 /*   By: gusluiz- <gusluiz-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 16:24:50 by gusluiz-          #+#    #+#             */
-/*   Updated: 2022/05/31 23:45:46 by gusluiz-         ###   ########.fr       */
+/*   Updated: 2022/06/24 16:45:55 by gusluiz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ size_t	ft_strlen(const char *str)
 
 	i = 0;
 	while (str[i] != '\0')
-		i ++;
+		i++;
 	return (i);
 }

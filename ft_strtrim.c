@@ -6,60 +6,29 @@
 /*   By: gusluiz- <gusluiz-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 16:31:34 by gusluiz-          #+#    #+#             */
-/*   Updated: 2022/06/18 16:32:27 by gusluiz-         ###   ########.fr       */
+/*   Updated: 2022/06/25 20:03:33 by gusluiz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int	ft_is_blank(char c)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	if (c == ' ' || c == '\t' || c == '\n')
-		return (1);
-	return (0);
-}
+	char	*str;
+	size_t	start;
+	size_t	end;
 
-static	char	*ft_return(int start, int end, const char *s)
-{
-	char	*trim;
-	int		i;
-
-	if (end <= start)
+	start = 0;
+	while (s1[start] && ft_strchr(set, s1[start]))
+		start++;
+	end = ft_strlen(s1);
+	if (start == end)
 	{
-		trim = (char *)malloc(sizeof(*trim));
-		trim[0] = '\0';
-		return (trim);
+		str = ft_substr(s1, start, 1);
+		return (str);
 	}
-	trim = (char *)malloc(sizeof(*trim) * (end - start + 2));
-	if (trim == NULL)
-		return (NULL);
-	i = start;
-	while (i <= end)
-	{
-		trim[i - start] = s[i];
-		i++;
-	}
-	trim[i - start] = '\0';
-	return (trim);
-}
-
-char	*ft_strtrim(char const *s)
-{
-	int		end;
-	int		start;
-
-	if (s != NULL)
-	{
-		start = 0;
-		while (ft_is_blank(s[start]) && s[start] != '\0')
-			start++;
-		end = start;
-		while (s[end] != '\0')
-			end++;
+	while (end && ft_strchr(set, s1[end]))
 		end--;
-		while (ft_is_blank(s[end]))
-			end--;
-		return (ft_return(start, end, s));
-	}
-	return (NULL);
+	str = ft_substr(s1, start, (end - start + 1));
+	return (str);
 }

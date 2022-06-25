@@ -6,7 +6,7 @@
 /*   By: gusluiz- <gusluiz-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 19:26:49 by gusluiz-          #+#    #+#             */
-/*   Updated: 2022/06/22 19:28:00 by gusluiz-         ###   ########.fr       */
+/*   Updated: 2022/06/23 01:33:55 by gusluiz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,5 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	if (fd != 0 || fd != 1 || fd != 2)
-		return (void);
 	write (fd, &c, 1);
 }

@@ -6,7 +6,7 @@
 /*   By: gusluiz- <gusluiz-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 23:48:33 by gusluiz-          #+#    #+#             */
-/*   Updated: 2022/06/01 15:59:25 by gusluiz-         ###   ########.fr       */
+/*   Updated: 2022/06/23 01:33:17 by gusluiz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@ void	*ft_memset(void	*s, int c, size_t n)
 
 	p = (unsigned char *)s;
 	i = 0;
-	if (s == NULL)
-		return (void);
-	while (i < n)
-		p[i ++] = (unsigned char)c;
+	if (s != NULL)
+		while (i < n)
+			p[i ++] = (unsigned char)c;
 	return (s);
 }

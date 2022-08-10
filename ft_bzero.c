@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gusluiz- <gusluiz-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/01 00:41:02 by gusluiz-          #+#    #+#             */
-/*   Updated: 2022/06/23 01:32:53 by gusluiz-         ###   ########.fr       */
+/*   Created: 2022/06/29 04:35:02 by gusluiz-          #+#    #+#             */
+/*   Updated: 2022/06/29 04:41:46 by gusluiz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_bzero(void *s, size_t n)
 
 	p = (unsigned char *)s;
 	i = 0;
-	if (s != NULL)
+	if (p != NULL)
 		while (i < n)
 			p[i ++] = '\0';
 }

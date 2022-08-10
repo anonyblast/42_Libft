@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gusluiz- <gusluiz-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/06 02:46:27 by gusluiz-          #+#    #+#             */
-/*   Updated: 2022/06/06 02:52:45 by gusluiz-         ###   ########.fr       */
+/*   Created: 2022/06/30 23:00:09 by gusluiz-          #+#    #+#             */
+/*   Updated: 2022/06/30 23:21:18 by gusluiz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	size_t	len;
 
-	i = ft_strlen(s);
-	while (i >= 0)
+	len = ft_strlen(s);
+	while (len + 1 != 0)
 	{
-		if (s[i] == (char)c)
-			return ((char *)(s + i));
-		i --;
+		if (s[len] == (unsigned char) c)
+			return ((char *)s + (len));
+		len--;
 	}
 	return (NULL);
 }

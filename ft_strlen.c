@@ -5,19 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gusluiz- <gusluiz-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/31 16:24:50 by gusluiz-          #+#    #+#             */
-/*   Updated: 2022/06/24 16:45:55 by gusluiz-         ###   ########.fr       */
+/*   Created: 2022/06/29 03:47:05 by gusluiz-          #+#    #+#             */
+/*   Updated: 2022/06/30 03:27:17 by gusluiz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (s[i] != '\0')
 		i++;
 	return (i);
 }

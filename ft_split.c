@@ -5,95 +5,70 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gusluiz- <gusluiz-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/18 16:34:39 by gusluiz-          #+#    #+#             */
-/*   Updated: 2022/06/18 16:38:35 by gusluiz-         ###   ########.fr       */
+/*   Created: 2022/07/08 03:33:18 by gusluiz-          #+#    #+#             */
+/*   Updated: 2022/07/14 03:29:09 by gusluiz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int	ft_not_c(char ch, char c)
+static int	ft_count_split(char const *s, char c)
 {
-	if (ch == c)
-		return (0);
-	return (1);
-}
-
-static	int	ft_count_w(const char *str, char c)
-{
-	int		i;
-	int		j;
-	int		n;
+	int	i;
+	int	count;
+	int	aux;
 
 	i = 0;
-	j = 0;
-	n = 0;
-	while (str[i] != '\0')
+	count = 0;
+	aux = 0;
+	while (s[i])
 	{
-		if (ft_not_c(str[i], c) == 0)
+		if (s[i] == c && aux == 1)
+			aux = 0;
+		if (s[i] != c && aux == 0)
 		{
-			if (j == 1)
-				j = 0;
+			count ++;
+			aux = 1;
 		}
-		if (ft_not_c(str[i], c) == 1)
-		{
-			if (j == 0)
-			{
-				n++;
-				j = 1;
-			}
-		}
-		i++;
+		i ++;
 	}
-	return (n);
+	return (count);
 }
 
-static	int	ft_size_w(const char *str, int ind, char c)
+static int	ft_array(char const *s, char c, char **ptr)
 {
-	int		i;
+	size_t	size;
 
-	i = ind;
-	while (ft_not_c(str[i], c) == 1 && str[i])
-		i++;
-	return (i - ind);
+	size = 0;
+	while (s[size] != c && s[size])
+		size++;
+	*ptr = ft_substr(s, 0, size);
+	return (size);
 }
 
-static	int	ft_position(const char *str, int *pt, char c)
+char	**ft_split(char const *s, char c)
 {
-	while (str[*pt])
-	{
-		if (ft_not_c(str[*pt], c) == 1)
-			break ;
-		(*pt)++;
-	}
-	return (0);
-}
+	char	**ptr;
+	int		quantity_arr;
+	size_t	index;
+	size_t	p_index;
 
-char	**ft_split(char const *str, char c)
-{
-	int		t[3];
-	int		pt[1];
-	char	**table;
-
-	if (str == NULL)
+	index = 0;
+	p_index = 0;
+	quantity_arr = ft_count_split(s, c);
+	ptr = (char **)malloc((quantity_arr + 1) * sizeof(char *));
+	if (!ptr)
 		return (NULL);
-	t[0] = 0;
-	*pt = 0;
-	table = (char **)malloc((ft_count_w(str, c) + 1) * sizeof(char *));
-	if (table)
+	while (s[index])
 	{
-		while (t[0] < ft_count_w(str, c))
+		while (s[index] == c)
+			index++;
+		if (index < ft_strlen(s))
 		{
-			t[1] = 0;
-			ft_position(str, pt, c);
-			t[2] = ft_size_w(str, *pt, c);
-			table[t[0]] = (char *)malloc((t[2] + 1) * sizeof(char));
-			while (t[1] < t[2])
-				table[t[0]][t[1]++] = str[(*pt)++];
-			table[t[0]][t[1]] = '\0';
-			t[0]++;
+			index += ft_array(&s[index], c, &ptr[p_index]);
+			p_index ++;
 		}
-		table[t[0]] = 0;
 	}
-	return (table);
+	ptr[p_index] = NULL;
+	return (ptr);
 }

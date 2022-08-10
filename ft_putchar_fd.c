@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gusluiz- <gusluiz-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/22 19:26:49 by gusluiz-          #+#    #+#             */
-/*   Updated: 2022/06/23 01:33:55 by gusluiz-         ###   ########.fr       */
+/*   Created: 2022/07/08 03:52:30 by gusluiz-          #+#    #+#             */
+/*   Updated: 2022/07/08 03:52:33 by gusluiz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	write (fd, &c, 1);
+	write(fd, &c, 1);
 }

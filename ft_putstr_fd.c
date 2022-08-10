@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gusluiz- <gusluiz-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/22 19:30:53 by gusluiz-          #+#    #+#             */
-/*   Updated: 2022/06/22 19:31:18 by gusluiz-         ###   ########.fr       */
+/*   Created: 2022/07/08 03:54:19 by gusluiz-          #+#    #+#             */
+/*   Updated: 2022/07/08 03:54:57 by gusluiz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,9 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (s[i])
-	{
-		write(fd, &s[i], 1);
-		i++;
-	}
+	if (s[i])
+		write(fd, s, ft_strlen(s));
 }

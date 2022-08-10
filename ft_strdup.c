@@ -5,31 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gusluiz- <gusluiz-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/18 16:16:37 by gusluiz-          #+#    #+#             */
-/*   Updated: 2022/06/18 16:17:43 by gusluiz-         ###   ########.fr       */
+/*   Created: 2022/07/05 21:11:11 by gusluiz-          #+#    #+#             */
+/*   Updated: 2022/07/08 02:22:36 by gusluiz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *src)
+char	*ft_strdup(const char *s)
 {
-	int		i;
-	int		len_src;
 	char	*dup;
+	size_t	len;
 
-	i = 0;
-	len_src = 0;
-	while (src[len_src] != '\0')
-		len_src++;
-	dup = (char *)malloc(sizeof(*src) * (len_src + 1));
-	if (dup == 0)
+	len = ft_strlen(s) + 1;
+	dup = malloc(len);
+	if (!dup)
 		return (NULL);
-	while (i < len_src)
-	{
-		dup[i] = src[i];
-		i++;
-	}
-	dup[i] = '\0';
+	ft_strlcpy(dup, s, len);
 	return (dup);
 }

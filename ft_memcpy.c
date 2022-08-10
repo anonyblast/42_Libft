@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gusluiz- <gusluiz-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/01 16:35:29 by gusluiz-          #+#    #+#             */
-/*   Updated: 2022/06/02 02:34:01 by gusluiz-         ###   ########.fr       */
+/*   Created: 2022/06/29 18:01:22 by gusluiz-          #+#    #+#             */
+/*   Updated: 2022/06/29 18:36:37 by gusluiz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,12 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned char		*c_dest;
-	const unsigned char	*c_src;
-	size_t				i;
+	unsigned char	*p_dest;
+	unsigned char	*p_src;
 
-	c_dest = (unsigned char *) dest;
-	c_src = (const unsigned char *) src;
-	i = 0;
-	while (i < n && c_dest != NULL && c_src != NULL)
-	{	
-		c_dest[i] = c_src[i];
-		i ++;
-	}
+	p_dest = (unsigned char *)dest;
+	p_src = (unsigned char *)src;
+	while (n --)
+		*p_dest ++ = *p_src ++;
 	return (dest);
 }

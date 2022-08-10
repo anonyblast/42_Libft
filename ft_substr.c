@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gusluiz- <gusluiz-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/18 16:23:43 by gusluiz-          #+#    #+#             */
-/*   Updated: 2022/06/18 16:24:15 by gusluiz-         ###   ########.fr       */
+/*   Created: 2022/07/08 02:30:39 by gusluiz-          #+#    #+#             */
+/*   Updated: 2022/07/08 03:07:37 by gusluiz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,18 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
-	size_t	i;
+	size_t	len_str;
 
-	if (s != NULL)
-	{
-		sub = (char *)malloc(sizeof(*sub) * (len + 1));
-		if (sub == NULL)
-			return (NULL);
-		i = 0;
-		while (i < len && s[start + i] != '\0')
-		{
-			sub[i] = s[start + i];
-			i++;
-		}
-		sub[i] = '\0';
-		return (sub);
-	}
-	return (NULL);
+	len_str = ft_strlen(s);
+	if (!s)
+		return (NULL);
+	if (start >= len_str)
+		return (ft_strdup(""));
+	if ((len_str - start) < len)
+		len = len_str - start;
+	sub = malloc(len + 1);
+	if (!sub)
+		return (NULL);
+	ft_strlcpy(sub, &s[start], len + 1);
+	return (sub);
 }

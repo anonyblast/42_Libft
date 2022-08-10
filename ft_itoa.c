@@ -5,59 +5,57 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gusluiz- <gusluiz-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/18 16:41:33 by gusluiz-          #+#    #+#             */
-/*   Updated: 2022/06/24 00:43:56 by gusluiz-         ###   ########.fr       */
+/*   Created: 2022/07/08 03:45:23 by gusluiz-          #+#    #+#             */
+/*   Updated: 2022/07/08 03:45:57 by gusluiz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_count_numbers(int n)
+static int	ft_count_dig(int n)
 {
-	size_t			i;
+	int	c;
 
-	i = 1;
-	if (n == -2147483648)
-		return (11);
+	c = 0;
 	if (n < 0)
 	{
 		n *= -1;
-		i++;
+		c++;
 	}
-	if (n >= 0 && n <= 9)
-		return (i);
-	while (n / 10 > 0 || n % 10 == 0)
+	while (n >= 10)
 	{
-		n = n / 10;
-		i++;
+		n /= 10;
+		c++;
 	}
-	return (i);
+	if (n < 10)
+		c++;
+	return (c);
 }
 
 char	*ft_itoa(int n)
 {
-	char			*res;
-	long int		n_value;
-	unsigned int	char_n;
-	size_t			size;
+	char	*str;
+	int		i;
 
-	size = ft_count_numbers(n);
-	res = malloc(size + 1);
-	if (!res)
-		return (0);
-	res[size] = '\0';
-	n_value = n;
-	if (n_value < 0)
-		n_value *= -1;
-	while (size)
-	{
-		char_n = n_value;
-		while (char_n > 9)
-			char_n = char_n % 10;
-		res[--size] = char_n + 48;
-		n_value = n_value / 10;
-	}
+	if (n == -2147483648)
+		return (ft_strdup ("-2147483648"));
+	str = malloc((ft_count_dig(n)) + 1);
+	if (!str)
+		return (NULL);
+	i = ft_count_dig(n) - 1;
+	str[i + 1] = '\0';
 	if (n < 0)
-		res[0] = '-';
-	return (res);
+	{
+		str[0] = '-';
+		n *= -1;
+	}
+	while (n >= 10)
+	{
+		str[i] = (n % 10) + '0';
+		n /= 10;
+		i--;
+	}
+	if (n <= 9)
+		str[i] = n + '0';
+	return (str);
 }

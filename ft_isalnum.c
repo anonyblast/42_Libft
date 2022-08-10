@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gusluiz- <gusluiz-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/31 03:34:10 by gusluiz-          #+#    #+#             */
-/*   Updated: 2022/05/31 16:23:41 by gusluiz-         ###   ########.fr       */
+/*   Created: 2022/06/29 02:55:19 by gusluiz-          #+#    #+#             */
+/*   Updated: 2022/06/30 03:36:10 by gusluiz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,5 @@ int	ft_isalnum(int c)
 {
 	if (ft_isalpha(c) || ft_isdigit(c))
 		return (1);
-	else
-		return (0);
+	return (0);
 }
